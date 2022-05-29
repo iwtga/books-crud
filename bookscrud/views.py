@@ -1,4 +1,4 @@
-from flask import make_response, request
+from flask import jsonify, make_response, request
 from bookscrud import db, app
 from bookscrud.models import Books
 
@@ -14,3 +14,10 @@ def create_book():
     )
     book.save()
     return make_response("Book Created!", 201)
+
+@app.route('/books')
+def read_book():
+    books = []
+    for book in Books.objects:
+        books.append(book.get_json())
+    return make_response(jsonify(books), 200)
