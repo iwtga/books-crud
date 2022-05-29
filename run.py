@@ -1,1 +1,1 @@
-import bookscrud
+from bookscrud import app
