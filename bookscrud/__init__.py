@@ -8,7 +8,7 @@ try:
 except:
     pass
 
-database_name = "bookstore"
+database_name = os.environ.get("DATABASE_NAME")
 password = os.environ.get("PASSWORD")
 DB_URI = f"mongodb+srv://alan:{password}@python-cluster.vuny8gs.mongodb.net/{database_name}?retryWrites=true&w=majority"
 db.connect(host=DB_URI)
