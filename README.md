@@ -11,6 +11,7 @@ FLASK_APP=run
 FLASK_ENV=development
 DATABASE_NAME=NameOfTheDatabase
 PASSWORD=PasswordForTheDatabase
+USERNAME=DBUserName
 ```
 6. ```flask run```
 
